@@ -8,6 +8,11 @@ output "launch_template_arn" {
   value       = join("", aws_launch_template.default.*.arn)
 }
 
+output "launch_template_latest_version" {
+  description = "The latest version of the launch template"
+  value       = join("", aws_launch_template.default.*.latest_version)
+}
+
 output "autoscaling_group_id" {
   description = "The AutoScaling Group id"
   value       = join("", aws_autoscaling_group.default.*.id)
@@ -57,4 +62,5 @@ output "autoscaling_group_launch_configuration" {
   description = "`Launch configuration used to provision the instances"
   value       = join("", aws_autoscaling_group.default.*.launch_configuration)
 }
+
 
