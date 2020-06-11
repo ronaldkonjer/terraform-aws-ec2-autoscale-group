@@ -60,7 +60,7 @@ output "autoscaling_group_health_check_type" {
 
 output "autoscaling_group_launch_configuration" {
   description = "`Launch configuration used to provision the instances"
-  value       = join("", aws_autoscaling_group.default.*.launch_configuration)
+  value       = join("", aws_autoscaling_group.default.launch_configuration)
 }
 
 
